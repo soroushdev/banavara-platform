@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#102624">
+  <title>ارزیابی رایگان ملک | بناورا</title>
+  <meta name="description" content="با پاسخ به شش سؤال کوتاه، ظرفیت احتمالی ملک برای بازسازی ارزش‌افزا را بدون ثبت‌نام بررسی کنید.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%2317312f'/%3E%3Cpath d='M15 45V27l17-12 17 12v18H38V33H26v12H15Z' fill='%23df6a3d'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="assessment.css">
+</head>
+<body>
+  <header class="tool-header">
+    <a class="brand" href="index.html"><b>بناورا<span>.</span></b><small lang="en">BANAVARA</small></a>
+    <a class="close-link" href="index.html">خروج از ارزیابی</a>
+  </header>
+
+  <main>
+    <section class="tool-intro" id="intro">
+      <span class="eyebrow">ارزیابی سریع و رایگان</span>
+      <h1>ملکت چقدر ظرفیت بهسازی دارد؟</h1>
+      <p>شش سؤال کوتاه؛ بدون عکس، شماره تماس یا ثبت‌نام. این ارزیابی برای تصمیم اولیه است و جای بازدید فنی و قیمت‌گذاری را نمی‌گیرد.</p>
+      <ul><li>حدود ۶۰ ثانیه</li><li>بدون هزینه</li><li>نتیجه فوری</li></ul>
+      <button class="primary" id="start" type="button">شروع ارزیابی <span>↗</span></button>
+      <small>پاسخ‌ها فقط روی دستگاه شما تحلیل می‌شوند و خودکار برای بناورا ارسال نخواهند شد.</small>
+    </section>
+
+    <section class="wizard" id="wizard" hidden aria-labelledby="question-title">
+      <div class="progress-wrap">
+        <div class="progress-meta"><span id="progress-text">سؤال ۱ از ۶</span><span id="progress-percent">۱۷٪</span></div>
+        <div class="progress" aria-hidden="true"><i id="progress-bar"></i></div>
+      </div>
+      <form id="assessment-form">
+        <fieldset class="step active" data-step="0">
+          <legend id="question-title">هدفت از بهسازی این ملک چیست؟</legend>
+          <p class="hint">مهم‌ترین هدف را انتخاب کن.</p>
+          <div class="options">
+            <label><input type="radio" name="goal" value="sale" required><span><b>فروش بهتر</b><small>ملک فروش نمی‌رود یا پیشنهادها پایین‌اند</small></span></label>
+            <label><input type="radio" name="goal" value="rent_long"><span><b>اجاره بلندمدت بهتر</b><small>آماده‌سازی برای جذب مستأجر مناسب و قرارداد پایدار</small></span></label>
+            <label><input type="radio" name="goal" value="rent_short"><span><b>اجاره کوتاه‌مدت بهتر</b><small>آماده‌سازی برای اقامت روزانه، هفتگی یا فصلی</small></span></label>
+            <label><input type="radio" name="goal" value="live"><span><b>سکونت و آسایش</b><small>می‌خواهم خودم از ملک استفاده کنم</small></span></label>
+            <label><input type="radio" name="goal" value="restore"><span><b>احیای ملک رهاشده</b><small>مدتی استفاده نشده یا فرسوده شده است</small></span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="step" data-step="1">
+          <legend>ملک از چه نوعی است؟</legend>
+          <p class="hint">نوع ملک روی اولویت‌ها و شیوه اجرا اثر دارد.</p>
+          <div class="options">
+            <label><input type="radio" name="type" value="villa" required><span><b>ویلا</b><small>ساختمان مستقل با محوطه</small></span></label>
+            <label><input type="radio" name="type" value="apartment"><span><b>آپارتمان</b><small>واحد مسکونی در ساختمان مشترک</small></span></label>
+            <label><input type="radio" name="type" value="house"><span><b>خانه قدیمی</b><small>بنای مستقل شهری یا روستایی</small></span></label>
+            <label><input type="radio" name="type" value="commercial"><span><b>ملک تجاری</b><small>مغازه، دفتر یا فضای کسب‌وکار</small></span></label>
+            <label><input type="radio" name="type" value="other"><span><b>سایر</b><small>ملکی که در گزینه‌های بالا نیست</small></span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="step" data-step="2">
+          <legend>ملک در کدام محدوده قرار دارد؟</legend>
+          <p class="hint">فعلاً نشانی دقیق لازم نیست.</p>
+          <div class="options">
+            <label><input type="radio" name="location" value="chalus" required><span><b>چالوس و هچیرود</b><small>شهر و محدوده نزدیک</small></span></label>
+            <label><input type="radio" name="location" value="nowshahr"><span><b>نوشهر و سیسنگان</b><small>شهر و محدوده نزدیک</small></span></label>
+            <label><input type="radio" name="location" value="mountain"><span><b>مرزن‌آباد و کلاردشت</b><small>مناطق کوهستانی</small></span></label>
+            <label><input type="radio" name="location" value="other"><span><b>سایر نقاط مازندران</b><small>در مرحله بعد محدوده بررسی می‌شود</small></span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="step" data-step="3">
+          <legend>زیربنای تقریبی چقدر است؟</legend>
+          <p class="hint">یک بازه تقریبی کافی است.</p>
+          <div class="options">
+            <label><input type="radio" name="area" value="small" required><span><b>کمتر از ۱۰۰ متر</b></span></label>
+            <label><input type="radio" name="area" value="medium"><span><b>۱۰۰ تا ۲۰۰ متر</b></span></label>
+            <label><input type="radio" name="area" value="large"><span><b>۲۰۰ تا ۳۵۰ متر</b></span></label>
+            <label><input type="radio" name="area" value="xlarge"><span><b>بیشتر از ۳۵۰ متر</b></span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="step" data-step="4">
+          <legend>ساختمان تقریباً چند ساله است؟</legend>
+          <p class="hint">اگر مطمئن نیستی، نزدیک‌ترین بازه را انتخاب کن.</p>
+          <div class="options">
+            <label><input type="radio" name="age" value="new" required><span><b>کمتر از ۵ سال</b></span></label>
+            <label><input type="radio" name="age" value="mid"><span><b>۵ تا ۱۵ سال</b></span></label>
+            <label><input type="radio" name="age" value="old"><span><b>۱۵ تا ۳۰ سال</b></span></label>
+            <label><input type="radio" name="age" value="veryold"><span><b>بیشتر از ۳۰ سال</b></span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="step" data-step="5">
+          <legend>مهم‌ترین مسئله فعلی ملک چیست؟</legend>
+          <p class="hint">در مراحل بعد می‌توانیم بقیه مشکلات را هم بررسی کنیم.</p>
+          <div class="options">
+            <label><input type="radio" name="issue" value="appeal" required><span><b>ظاهر قدیمی یا جذابیت پایین</b><small>ملک خوب دیده نمی‌شود یا تماس کمی دارد</small></span></label>
+            <label><input type="radio" name="issue" value="visits"><span><b>بازدید می‌شود اما پیشنهاد نمی‌گیرد</b><small>خریدار می‌آید ولی تصمیم نمی‌گیرد</small></span></label>
+            <label><input type="radio" name="issue" value="underpriced"><span><b>ملک پایین‌تر از قیمت منطقه ارزیابی می‌شود</b><small>قیمت‌های اطراف بالاترند اما پیشنهادها یا قیمت فایل من پایین‌تر است</small></span></label>
+            <label><input type="radio" name="issue" value="damp"><span><b>نم، فرسودگی یا خرابی</b><small>نشانه‌های قابل مشاهده ساختمان</small></span></label>
+            <label><input type="radio" name="issue" value="systems"><span><b>برق، تأسیسات یا آسایش</b><small>مشکل عملکرد، مصرف انرژی یا قطعی برق</small></span></label>
+            <label><input type="radio" name="issue" value="layout"><span><b>پلان یا استفاده نامناسب از فضا</b><small>فضاها خوب کار نمی‌کنند</small></span></label>
+            <label><input type="radio" name="issue" value="outdoor"><span><b>محوطه، ورودی یا امنیت</b><small>حیاط، دسترسی یا حفاظت فیزیکی ضعیف است</small></span></label>
+          </div>
+        </fieldset>
+
+        <p class="form-error" id="form-error" role="alert"></p>
+        <div class="wizard-actions"><button class="secondary" id="back" type="button">مرحله قبل</button><button class="primary" id="next" type="button">ادامه <span>←</span></button></div>
+      </form>
+    </section>
+
+    <section class="result" id="result" hidden aria-live="polite">
+      <span class="eyebrow">نتیجه ارزیابی اولیه</span>
+      <div class="score-row"><strong id="score">۰</strong><span>از ۱۰۰<br>ظرفیت بررسی ارزش‌افزا</span></div>
+      <h2 id="result-title"></h2>
+      <p id="result-summary" class="result-summary"></p>
+      <div class="result-grid">
+        <article><span>اولویت اول</span><h3 id="priority"></h3><p id="priority-text"></p></article>
+        <article><span>سطح پیشنهادی</span><h3 id="level"></h3><p>عدد هزینه و زمان پس از دیدن تصاویر، ابعاد و شرایط واقعی قابل برآورد است.</p></article>
+      </div>
+      <div class="recommendations"><h3>سه موضوعی که بهتر است بررسی شوند</h3><ol id="recommendations"></ol></div>
+      <div class="result-warning"><b>این نتیجه چه چیزی نیست؟</b><p>قیمت‌گذاری، تشخیص فنی قطعی یا تضمین افزایش قیمت ملک نیست. خرابی پنهان، کیفیت زیرسازی و وضعیت تأسیسات از این شش پاسخ قابل تشخیص نیستند.</p></div>
+      <div class="result-actions"><a class="primary next-stage" id="whatsapp-result" href="#" target="_blank" rel="noopener noreferrer">رفتن به بررسی تصویری <span>↗</span></a><button class="secondary" id="restart" type="button">شروع دوباره</button></div>
+      <small class="next-note">در مرحله بعد می‌توانی نتیجه را داوطلبانه برای بناورا بفرستی و راهنمای عکس‌برداری دریافت کنی.</small>
+    </section>
+  </main>
+  <script src="assessment.js"></script>
+</body>
+</html>
